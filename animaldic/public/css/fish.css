@@ -1,0 +1,49 @@
+table.fish {
+  background-color: red;
+  width: 99%;
+  margin: 5px auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+  thead {
+    position: relative;
+    z-index: 1000;
+    th {
+      position: sticky;
+      z-index: 1001;
+      top: 0;
+      background-color: blue;
+    }
+  }
+  tbody {
+    tr {
+      cursor: pointer;
+    }
+    tr:hover {
+      background-color: black;
+    }
+  }
+  tr:nth-of-type(odd) {
+    background-color: #e3e3e3;
+  }
+
+  th,
+  td {
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  th:nth-last-child(1),
+  td:nth-last-child(1) {
+    border-right: none;
+  }
+}

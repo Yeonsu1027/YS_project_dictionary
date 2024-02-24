@@ -1,0 +1,83 @@
+extends ../../layout
+
+block content
+    script(src="/js/check.js")
+    link(rel='stylesheet', href='/css/check2.css')
+    link(rel='stylesheet', href='/css/home.css')
+    link(rel='stylesheet', href='/css/home2.css')
+    article
+        h3.checklist
+            if user
+                p=user.m_username
+                    strong  의 CheckList
+                    i.fa.fa-check-square
+                section.input.ckcss
+                    form(method="POST") 
+                        input.add_check(placeholder="할일입력", name="u_check", id="u_check")
+                        input.input_hidden(type="text",  name="u_user", id="u_user")
+                        input.input_hidden(type="text",  name="u_num", id="u_num")
+                        input.add(type="submit",value="추가 +")
+                section.list.ckcss
+                    each item in check
+                        ul.checkul(data-u_num= `${item.u_num}`)
+                            //- span(class= `${item.u_checkmark == 1 ? 'check' : ''}`) &check;
+                            li(class= `${item.u_checkmark == 1 ? 'licheck' : ''}`)= item.u_check
+                                button.delete
+                                    i.fa.fa-times 　
+                h3.other 나의 반려동물
+                    i.fa.fa-paw
+                div.etc.notwhitespace.mypet
+                    div.etc.notwhitespace.mypetimgblock
+                        if myanimal && myanimal.ma_image_name
+                            img.mypetimg(src=`/uploads/${myanimal.ma_image_name}`)
+                        else
+                            img.mypetimg(src="/images/noimage.png", alt="사진등록안함")
+                    div.divdiv.mypetinform
+                        article.inform
+                            if myanimal && myanimal.ma_animalname
+                                p 이름: #{myanimal.ma_animalname}
+                            else 
+                                p 반려동물 이름을 입력하세요!
+                            if myanimal && myanimal.ma_age
+                                p 나이: #{myanimal.ma_age}
+                            else
+                                p 나이를 입력해주세요!
+                        if myanimal && myanimal.ma_memo
+                            p.introduce 소개 : #{myanimal.ma_memo}
+                        else
+                            p 소개글을 작성해보세요!
+                        if myanimal
+                            a.insert(href="/update") 수정
+                        else
+                            a.insert(href="/insert") 추가
+            else
+                p
+                    strong CheckList 작성하기
+                    i.fa.fa-check-square
+                section.input.ckcss
+                    form
+                        input.add_check(placeholder="로그인 후 이용가능합니다")
+                        input.add.ex(value="추가 +")
+                section.list.ckcss.marginb
+                    ul
+                        li 로그인후 나만의 체크리스트를 작성하세요!
+                    ul
+                        li EX) 산책가기
+                    ul
+                        li EX) 목욕시키기
+                    ul
+                        li EX) 놀아주기
+                    ul
+                        li EX) 사료 구입하기 
+                p 　
+                p 　
+                h3.other 나의 반려동물
+                    i.fa.fa-paw
+                div.etc.notwhitespace.mypet
+                    div.etc.notwhitespace.mypetimgblock
+                        img.mypetimg(src="/images/noimage.png", alt="사진등록안함")
+                    div.divdiv.mypetinform
+                        article.inform
+                            p 이름은?
+                            p 나이?
+                        p.introduce 로그인 후 나의 반려동물을 소개해보세요!

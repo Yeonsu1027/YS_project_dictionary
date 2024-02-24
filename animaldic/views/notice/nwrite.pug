@@ -1,0 +1,15 @@
+extends ../../layout
+
+block content
+    link(rel='stylesheet', href='/css/nwrite.css')
+    section.body
+        body.write
+            h1 작성해주세요
+            form(action="/submit" method="post")
+            label(for="title") 제목
+            input.title(type="text" name="title" id="title")
+            
+            label(for="content") 내용
+            textarea.content(name="content" id="content" rows="4" cols="50")
+            
+            button(type="submit") 등록

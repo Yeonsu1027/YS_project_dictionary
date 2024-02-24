@@ -1,0 +1,20 @@
+extends ../layout
+
+block content 
+    link(rel="stylesheet", href="/css/find.css")
+    script(src="/js/find.js")
+    form.id(method="POST") 
+        fieldset 
+            legend 아이디찾기
+            div 
+                label(for="") 사용자 이름
+                input(type="text", name="username", id="username")
+            div 
+                label(for="") 전화번호
+                input(type="text", name="usertel", id="usertel")
+            div 
+                label(for="") 이메일
+                input(type="text", name="useremail", id="useremail") 
+            div
+                label(for="")
+                input.btn(type="button",value="다음")

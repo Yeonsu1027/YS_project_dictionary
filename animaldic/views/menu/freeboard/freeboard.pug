@@ -1,0 +1,25 @@
+extend ../../layout
+
+block content
+    link(rel='stylesheet' href='./css/free.css')
+    h2  자유게시판
+    form.search
+        span.right 
+            span.grey SELECT
+            select(name="option")
+                option(value="title") 제목
+                option(value="author") 글쓴이
+            input.search(type="text" name="search")
+            button.find(id="btn_search") 검색
+        block list_content 
+        endblock
+    div.right
+      button.gradient
+        a(href='/freeboard/insert') 글쓰기
+    .center
+      a(href='#') ◀ 이전
+      a(href='#') 
+      a(href='#') 다음 ▶
+
+
+            

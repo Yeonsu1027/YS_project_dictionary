@@ -1,0 +1,40 @@
+extends ../../layout
+
+block content
+    link(rel='stylesheet', href='/css/anisub.css')
+    link(rel='stylesheet', href='/css/section.css')
+    div
+        strong
+            p.name= adata.a_name
+
+        img(src="/images/cat.jpg", alt="")
+        ul.menu
+            li
+                a(href="#p1") 사육조건
+            li
+                a(href="#p2") 음식
+            li
+                a(href="#p3") 습성
+            li
+                a(href="#p4") 주의사항
+        span
+            article.box1
+                p#p1 
+                header.header
+                    strong 사육조건 
+                p= adata.a_condition
+            article.box2
+                p#p2
+                header.header
+                    strong 음식
+                p= adata.a_food
+            article.box3
+                p#p3 
+                header.header
+                    strong 습성
+                p= adata.a_habit
+            article.box4
+                p#p4
+                header.header 
+                    strong 주의사항 
+                p= adata.a_caution

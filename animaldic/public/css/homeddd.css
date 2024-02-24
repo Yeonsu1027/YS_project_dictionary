@@ -1,0 +1,343 @@
+/*초기화코드*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  height: 90vh;
+}
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+/*초기화코드 End*/
+
+/*헤더 어플이름*/
+header {
+  background-color: #ffdf6a;
+  text-align: center;
+  padding: 30px;
+}
+a.ha {
+  text-decoration: none;
+  color: black;
+}
+
+/* end 헤더 */
+/* @@@@@@@일반메뉴 CSS @@@@@@@ */
+ul.MENU {
+  padding: 10px;
+  background-color: #00dad6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+/* HOME만 왼쪽으로 */
+ul.MENU li:first-child {
+  margin-right: auto;
+}
+ul.MENU li {
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.7s;
+}
+ul.MENU li a {
+  list-style: none;
+  color: black;
+  transition: 0.7s;
+  text-decoration: none;
+}
+a.menu1 li {
+  text-decoration: none;
+}
+ul.MENU li a:hover {
+  cursor: pointer;
+  /* background-color: rgb(255, 205, 113); */
+  color: white;
+}
+ul.MENU li {
+  list-style: none;
+  color: black;
+  transition: 0.7s;
+  text-decoration: none;
+}
+ul.MENU li:hover {
+  cursor: pointer;
+  /* background-color: rgb(255, 205, 113); */
+  color: white;
+}
+
+/* @@@@@@@일반메뉴 CSS END@@@@@@@ */
+
+/* ********** 동물목록************ */
+li {
+  list-style: none;
+}
+#gnb li ul {
+  display: none;
+}
+#gnb > li:hover > a {
+  /* border-bottom: 3px solid red; */
+  background-color: inherit;
+  /*나중엔 사진을 넣을거니까 opacity 가좋을듯*/
+}
+#gnb li:hover ul {
+  display: block;
+  /* border: 3px solid blue; */
+}
+#gnb li ul li:hover a {
+  /* border-bottom: 3px solid pink; */
+  background-color: inherit;
+  background-color: #ffdf6a;
+  border-radius: 30px;
+}
+ul li ul li {
+  margin-left: 100px;
+}
+
+h4 {
+  margin: 10px;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  border: solid black;
+  border-radius: 50px;
+  background-color: #c5fffa;
+}
+img.b_animal {
+  margin: 5px 0 15px 10px;
+  width: 100px;
+  height: 100px;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+div.dropdown_menu {
+  position: left; /*이목록은 항상 왼쪽에두게..*/
+  border: 3px solid black;
+  margin: 10px 10px 0 10px; /*섹션이랑 안붙게 위랑좀띄우고, 왼쪽도살짝*/
+  padding-right: 10px; /* 설치류 글자랑 안붙게 좀밀고*/
+  background-color: #fff8b4;
+}
+
+.notwhitespace {
+  /* 동물이름 안찌그러지게 */
+  white-space: nowrap;
+  text-decoration: none; /* 줄떼고 */
+  color: black;
+  font-weight: bold;
+}
+.anima:hover {
+  opacity: 0.6;
+}
+/* ************* end 동물목록 *********  */
+/* 영역구분 */
+div.nanugi {
+  display: flex;
+}
+section {
+  flex: auto;
+  border: 3px solid rgb(0, 0, 0);
+  margin-top: 10px; /* 동물메뉴랑 똑같이 메뉴에서 10xp 띄우고 */
+  margin-right: 10px; /* 오른쪽에 너무 딱붙지않게 */
+  display: flex; /*article 두개 나란히 섹션안에*/
+  flex-direction: column;
+}
+/* 영역구분 end*/
+section article {
+  margin: 10px;
+  flex: 1;
+}
+/* 알림 */
+ul.alrim {
+  margin: 5px 5px 0 5px;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 20px;
+}
+@keyframes alrim_slide {
+  0% {
+    transform: translateX(75%);
+  }
+  100% {
+    /* div.image_list 의 width * (-1) */
+    transform: translateX(1%);
+  }
+}
+li.alrim {
+  animation: alrim_slide 5s linear infinite;
+}
+li.alrim a {
+  text-decoration: none;
+  color: black;
+}
+/* 알림 end */
+/* art2 사이트목록 */
+div.site {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+div.site a {
+  flex: 1;
+  margin: 5px;
+  margin-right: 17px;
+  color: black;
+  text-decoration: none;
+  border: 3px solid pink;
+  border-radius: 8px;
+  padding: 3px;
+  background-color: #fff8cd;
+}
+img.pawin {
+  width: 50px;
+  height: 50px;
+}
+p.psite {
+  text-align: center;
+}
+footer.mf {
+  border: 5px solid #00dad6;
+  background-color: #c5fffa;
+  height: 50px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  text-align: center;
+  a {
+    flex: 1;
+    display: block;
+    margin: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    transition: 0.7s;
+    &:hover {
+      background-color: #00dad6;
+      color: white;
+      border-radius: 10px;
+    }
+  }
+}
+
+img {
+  margin-top: 20px;
+}
+img.youtube {
+  border-radius: 10px;
+  width: 180px;
+  height: 100px;
+  margin-top: 30px;
+}
+div.etc {
+  display: flex;
+
+  margin: 0 20px 20px 20px;
+}
+div.etc article {
+  border: 5px solid pink;
+  border-radius: 10px;
+  a {
+    display: block;
+    text-align: center;
+
+    text-decoration: none;
+    color: black;
+  }
+}
+h3.other {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+div.etc article a img:hover {
+  opacity: 0.7;
+}
+.fa {
+  /* 아이콘 옆으로띄우기 */
+  margin-left: 5px;
+}
+
+.fa-bell {
+  color: orange;
+}
+
+ul#gnb {
+  font-weight: bold;
+}
+
+a.logout {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 로그인 시에 나올것들 */
+div.mypet {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 3px solid #00dad6;
+}
+/* 이미지, 글 구분칸 */
+div.mypetinform {
+  /* border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+  text-align: right; /* 추가수정버튼은 오른쪽구석에 */
+  width: 100%;
+  margin-right: 15px;
+  p {
+    text-align: center;
+    padding: 5px;
+    border: 3px solid pink;
+    border-radius: 10px;
+    margin: 3px;
+  }
+
+}
+div.divdiv{
+  p{
+    border: 5px solid yellowgreen;
+    width: 100%;
+    height: 100%;
+  }
+ article {
+  display: flex;
+  p{
+    border: 2px solid pink;
+  margin: 5px;}
+}
+}
+
+section.list ul li button {
+  margin-left: auto;
+  width: 25px;
+  border-radius: 50px;
+  /* border: solid #00dad6; */
+  background-color: #00dad6;
+  i{
+
+    color: white
+  }
+  &:hover{
+    background-color: white;
+    cursor: pointer;
+    i{
+      color: red
+    }
+  }
+  
+}
+
+img.mypetimg {
+  width: 250px;
+  height: 250px;
+  border: 3px solid pink;
+  border-radius: 50%;
+  margin-bottom: 10px; /* 나중에뺄까*/
+}

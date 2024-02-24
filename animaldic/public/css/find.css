@@ -1,0 +1,89 @@
+form.find {
+  width: 50%;
+  padding: 2rem;
+  display: flex;
+  margin: 30px auto;
+  height: 40%;
+
+  fieldset {
+    border-radius: 10px;
+    width: 100%;
+  }
+  legend {
+    color: #00dad6;
+    text-align: center;
+  }
+  div {
+    width: 70%;
+    padding: 10px;
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+  }
+  input {
+    width: 80%;
+    padding: 8px;
+    transition: 0.7s;
+    border-radius: 10px;
+    &:hover {
+      background-color: #ffdf6a;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+}
+
+form.id,
+form.pw {
+  width: 70%;
+  display: flex;
+  padding: 2rem;
+  height: 60%;
+  margin: 30px auto;
+  fieldset {
+    border-radius: 10px;
+    width: 100%;
+  }
+  legend {
+    color: #00dad6;
+    text-align: center;
+  }
+}
+form.pw div {
+  &:nth-of-type(1) {
+    margin-right: 205px;
+  }
+}
+
+form.id div,
+form.pw div {
+  display: flex;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 50%;
+  margin: 3px auto;
+  justify-content: center;
+  text-align: left;
+  &:nth-of-type(2) {
+    margin-right: 202px;
+  }
+
+  &:nth-of-type(3) {
+    margin-right: 195px;
+  }
+  &:nth-of-type(4) {
+    margin-right: 170px;
+  }
+  input {
+    width: 70%;
+    padding: 8px;
+    transition: 0.7s;
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.7;
+      background-color: #ffdf6a;
+    }
+  }
+}

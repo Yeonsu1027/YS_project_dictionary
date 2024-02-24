@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    link(rel='stylesheet', href='/css/notice.css')
+
+    div.notice.btn_box
+        if director
+            a(href="/notice/insert") 추가
+        table.notice
+            tr
+                th NUM
+                th CONTENTS
+                th WRITER
+            tr
+                td.center
+                td.center
+                td.center
+        
+        .center
+            a(href='#') ◀ 이전 
+            a(href='#') 1
+            a(href='#')  다음 ▶
+        span.right
+            button.greylist 목록
+            button.gradient
+                a(href='/notice/nwrite') 글쓰기

@@ -1,0 +1,152 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta( name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    //- script(src="https://kit.fontawesome.com/9b331147db.js",crossorigin="anonymous")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.15.2/css/all.css", integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu", crossorigin="anonymous")
+    link(rel='stylesheet', href='/css/home.css')
+  body
+    a(class="ha" href="/")
+      header.header1
+        h1 반려동물 백서
+          i.fa.fa-paw
+    ul.MENU
+      li
+        a(href="/") HOME
+          i.fa.fa-home
+      li
+        a(href="/freeboard") 자유게시판
+          i.fa.fa-comment
+      li
+        a(href="/notice") 공지사항
+          i.fa.fa-exclamation
+      if user
+        li
+          a(href="/users/mypage")
+            span(style="color: #ffdf6a;") #{user.m_username}
+            |  의MyPAGE
+            i.fa.fa-address-book
+            //- img.user_img(src="/images/noimage.png", alt="사진없음")
+        li
+          a.logout(href="/logout") 로그아웃
+            i.fa.fa-ban
+      else
+        li
+          a(href="/login") 로그인
+            i.fa.fa-user-circle
+        li
+          a(href="/users/join") 회원가입
+            i.fa.fa-user-plus
+    ul.alrim
+      li.alrim
+        a(href="https://vpet.co.kr/category/%ED%8C%8C%EC%86%90%EC%9C%A0%ED%86%B5%EA%B8%B0%ED%95%9C%EC%9E%84%EB%B0%95/441/" target="new")
+          strong 파손/임박 상품 세일중 ▶ 브이펫 바로가기
+            i.fa.fa-bell
+    div.nanugi
+      div.dropdown_menu
+        ul#gnb
+          if user
+            img.user_img2(src="/images/noimage.png", alt="사진없음",width="100px", height="100px")
+            p #{user.m_username}
+          a(href="") 동물정보추가
+          h4 animals 
+          li 
+            a.notwhitespace(href="")
+              img.b_animal(src="/images/animal/설치류.png", alt="설치류")
+            | 설치류
+            ul.sub_menu.notwhitespace
+              li 
+                a(href="/mouse1")
+                  img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류1") 
+                | 기니피그
+              li 
+                a(href="/mouse2")
+                  img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류2")
+                | 친칠라
+              li
+                a(href="/mouse3") 
+                  img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류3") 
+                | 햄스터
+          li
+            a.notwhitespace(href="")
+              img.b_animal(src="/images/animal/어류.png", alt="설치류")
+            | 어류
+            ul.sub_menu.notwhitespace
+              li
+                a(href="/fish1") 
+                  img.b_animal.anima(src="/images/animal/어류.png", alt="어류1")
+                | 금붕어 
+              li
+                a(href="/fish2") 
+                  img.b_animal.anima(src="/images/animal/어류.png", alt="어류2")
+                | 구피
+              li
+                a(href="/fish3") 
+                  img.b_animal.anima(src="/images/animal/어류.png", alt="어류3")
+                | 네온테트라
+          li
+            a.notwhitespace(href="")
+              img.b_animal(src="/images/animal/조류.png", alt="조류")
+            | 조류
+            ul.sub_menu.notwhitespace
+              li 
+                a(href="/bird1") 
+                  img.b_animal.anima(src="/images/animal/조류.png", alt="어류1")
+                | 앵무새 
+              li 
+                a(href="/bird2") 
+                  img.b_animal.anima(src="/images/animal/조류.png", alt="어류2")
+                | 카나리아
+              li
+                a(href="/bird3") 
+                  img.b_animal.anima(src="/images/animal/조류.png", alt="어류3")
+                | 십자매
+          li
+            a.notwhitespace(href="")
+              img.b_animal(src="/images/animal/파충류.png", alt="파충류")
+            | 파충류
+            ul.sub_menu.notwhitespace
+              li
+                a(href="/snake1") 
+                  img.b_animal.anima(src="/images/animal/파충류.png", alt="파충류1")
+                | 뱀
+              li
+                a(href="/snake2") 
+                  img.b_animal.anima(src="/images/animal/파충류.png", alt="파충2")
+                | 거북이
+              li
+                a(href="/snake3") 
+                  img.b_animal.anima(src="/images/animal/파충류.png", alt="파충류3")
+                | 도마뱀
+          li
+            a.notwhitespace(href="") 
+              img.b_animal(src="/images/animal/포유류.png", alt="포유류")
+            | 포유류
+            ul.sub_menu.notwhitespace
+              li
+                a(href="/cat1") 
+                  img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류1")
+                | 강아지
+              li
+                a(href="/cat2") 
+                  img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류2")
+                | 고양이
+              li
+                a(href="/cat3") 
+                  img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류3")
+                | 라쿤
+      section.hwamyeon
+        block content
+    footer.notwhitespace.mf 
+      a(href="https://www.animal.go.kr/front/awtis/public/publicList.do?menuNo=1000000055" target="new") 유기동물조회
+        i.fa.fa-search
+      a(href="https://www.animal.go.kr/front/index.do" target="new") 국가동물보호정보시스템
+      a(href="https://pawinhand.kr/" target="new") 포인핸드
+      a(href="https://apms.epis.or.kr/home/kor/main.do" target="new") 동물사랑배움터
+
+    
+
+    

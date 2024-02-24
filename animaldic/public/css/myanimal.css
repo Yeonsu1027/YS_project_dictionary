@@ -1,0 +1,65 @@
+div.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1.addanimal {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border: 5px solid #ffdf6a;
+  background-color: #ffeeaf;
+  padding: 17px;
+  width: 300px;
+  border-radius: 50% 50% 10px 10px;
+}
+div.myanimalinput {
+  border: 5px solid #ffdf6a;
+  /* border-radius: 10px; */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 25px;
+  input {
+    padding: 10px;
+    margin: 5px;
+    /* border-radius: 10px; */
+  }
+  input.int {
+    height: 300px;
+  }
+  input.save {
+    width: 100px;
+    align-self: flex-end; /*버튼 오른쪽끝에*/
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 10px;
+
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+div.img_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img.petimg {
+  border-radius: 50%;
+  border: 5px solid #ffdf6a;
+}
+img.img_add {
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+.hidden {
+  display: none;
+}

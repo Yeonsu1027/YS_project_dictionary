@@ -1,0 +1,104 @@
+.ckcss {
+  width: 95%;
+  margin: 10px auto;
+  border: 3px solid #00dad6;
+}
+section.input {
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+section.input input {
+  flex: 1;
+  margin: 0 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+section.input input:hover {
+  background-color: #fff8b4;
+}
+section.input input:focus {
+  border: 2px solid orange;
+}
+section.input button {
+  margin-top: 7px; /* 입력칸이랑 거리주기 */
+  height: 30px;
+
+  padding: 0 40px;
+  border: none;
+  border-radius: 20px;
+  white-space: none; /* 화면이 줄어들었을때 글자가 접히지않음 */
+  background-color: #00dad6;
+  font-weight: bold;
+}
+section.list {
+  flex: 1;
+
+  margin-top: 0px;
+}
+section.list ul {
+  list-style: none;
+}
+section.list li {
+  cursor: pointer;
+  background-color: #fff3af;
+  font-size: 1.2rem;
+  /* 클릭했을때 글자 블럭쌓아지지않게 / 작성할때 줄그어지면 안써도되는것 */
+  /* Browser 호환성 위한 설정 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none; /* 더블클릭했을때 블럭x */
+  padding: 0.3rem; /* 리스트 줄크기 */
+  transition: 0.3s;
+
+  display: flex;
+}
+section.list li:nth-of-type(odd) {
+  /* odd 는 홀수. 홀수만 색바꾸기 (짝수는 even) */
+  background-color: #c5fffa;
+}
+section.list li:hover {
+  background-color: #ffd2e6;
+}
+section.list li.complete {
+  background-color: #e7dddd;
+}
+section.list li.complete span.todo {
+  text-decoration: line-through; /* 글자위에 줄긋기 */
+  color: #bebebe;
+}
+/*
+  li tag에 complete class 가 없으면
+  span.complete 에 속성 적용하기
+  */
+section.list li:not(.complete) span.complete {
+  /* li:not() li 태그에 complete가 붙어있지않으면 */
+  visibility: hidden;
+}
+span.complete {
+  margin: 0 5px;
+  color: red;
+}
+span.todo {
+  flex: 1;
+}
+span.close {
+  transition: 0.7s;
+  padding: 0 5px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+}
+span.close:hover {
+  color: red;
+  background-color: orange;
+  padding: 0 5px;
+}
+
+h3.checklist {
+  text-align: center;
+}

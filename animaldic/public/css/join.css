@@ -1,0 +1,72 @@
+form.join {
+  width: 45%;
+  margin: 10px auto;
+  padding: 15px 0;
+  border: 5px solid black;
+  background-color: #ffdf6a;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+
+  fieldset {
+    border: none;
+    width: 100%;
+  }
+
+  legend {
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    font-weight: 800;
+  }
+}
+
+.join div {
+  input {
+    justify-content: center;
+    width: 60%;
+    outline: none;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: 800;
+    margin-right: auto;
+
+    &:focus {
+      background-color: #c3c3ba;
+    }
+  }
+
+  label {
+    padding: 5px 0;
+    display: block;
+    text-align: left;
+    color: blue;
+    /* color: #00dad6; */
+  }
+
+  .button {
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+    width: 100px;
+    background-color: #ffdf6a;
+    cursor: pointer;
+
+    &:focus {
+      background-color: #ffdf6a;
+    }
+
+    &:hover {
+      background-color: #00dad6;
+    }
+  }
+}
+
+div.btn {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}

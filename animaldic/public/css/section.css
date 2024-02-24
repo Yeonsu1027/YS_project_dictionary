@@ -1,0 +1,87 @@
+section.hwamyeon p.name {
+  margin-top: 10px;
+  text-align: center;
+
+  background-color: #ffdf6a;
+  padding: 5px;
+}
+
+section.hwamyeon div img {
+  display: block;
+
+  margin: auto;
+  margin-top: 20px;
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+section.hwamyeon div span {
+  display: block;
+  margin: 10px;
+}
+
+.menu {
+  display: flex;
+  background-color: #00dad6;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+ul.menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu li {
+  flex: 1;
+  white-space: nowrap;
+  margin-left: 10px;
+  transition: 0.7s;
+}
+
+.menu li a {
+  font-weight: bold;
+  transition: 0.7s;
+}
+
+.menu li a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* ===================================================================================== */
+/* ===================================================================================== */
+
+section.hwamyeon>header {
+  font-size: 50px;
+}
+
+header.header {
+  background-color: #ffdf6a;
+  padding: 0.7rem;
+  display: flex;
+
+}
+
+p.box1,
+p.box2,
+p.box3,
+p.box4 {
+  border: 3px solid black;
+  font-size: 20px;
+}
+
+article.box1 ul p1 {
+  margin: 10px;
+}
+
+article.box1 ul li {
+
+  padding: 0 7px;
+}
+
+section.hwamyeon span article {
+  margin: 0;
+}

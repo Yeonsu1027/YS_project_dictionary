@@ -1,0 +1,23 @@
+extend ../../layout
+
+block content
+    link(rel="stylesheet", href="/css/free2.css")
+    script(src="/js/repost.js") 
+    h2.free 게시글 수정하기
+      main
+        form.write(method="POST",enctype="multipart/form-data")
+          input(type='text'  name="title" required='' value=`${bd.title}`)
+          hr
+          textarea.text(name="content")=bd.content
+          div.free
+            if user
+              div.user
+                  input.image(type="file" name="image" accept="image/*" id="image") 
+            else
+              div.user
+                  input.author(type="text" name="author" id="author" value=`${bd.author}` readonly)
+                  input.password(type="password" name='password' id='password'  placeholder='PASSWORD')
+                  input.image(type="file" name="image" accept="image/*" id="image")
+            div.freebutton(data-num=`${bd.num}`)
+                input.btn.repost(type="button" data-num=`${bd.num}` value="재게시")
+                input.btn.btn_list(type="button", value="돌아가기")

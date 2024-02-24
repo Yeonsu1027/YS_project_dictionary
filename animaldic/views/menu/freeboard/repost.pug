@@ -1,0 +1,17 @@
+extend ../../layout
+
+block content
+    link(rel="stylesheet", href="/css/free3.css")
+    script(src="/js/detail.js") 
+    h2.free 게시글 수정하기
+      main
+        form.write(method="POST")
+          input(type='text'  name="title" required='' value=`${book.title}`)
+          hr
+          textarea.text(name="content")=book.content
+          div.free
+            div.user
+                input(type="text" name="author" readonly value=`${book.author}`)
+            div.freebutton(data-author=`${book.author}`)
+                button.repost(data-author=`${book.author}`) 재게시
+                button.return 돌아가기

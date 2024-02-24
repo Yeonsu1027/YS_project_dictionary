@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    link(rel='stylesheet' href='./css/free.css')
+        h2  &#xC790;&#xC720;&#xAC8C;&#xC2DC;&#xD310; 
+        form
+            span.right 
+                span.grey SELECT
+                select
+                    option(value="제목", name="제목") 제목
+                    option(value="글쓴이", name="글쓴이") 글쓴이
+                input(type="text")
+                button.find 검색
+            block list_content 
+            endblock
+        .center
+          a(href='#') &#x25C0; &#xC774;&#xC804;
+          a(href='#') 
+          a(href='#') &#xB2E4;&#xC74C; &#x25B6;
+        .right(;='')
+          button.gradient
+            a(href='insert') &#xAE00;&#xC4F0;&#xAE30;
