@@ -27,7 +27,7 @@ html(lang="ko")
         li
           a(href="/users/mypage")
             span(style="color: #ffdf6a;") #{user.m_username}
-            |  의MyPAGE
+            |  의MyPage
             i.fa.fa-address-book
             //- img.user_img(src="/images/noimage.png", alt="사진없음")
         li
@@ -46,98 +46,110 @@ html(lang="ko")
           strong 파손/임박 상품 세일중 ▶ 브이펫 바로가기
             i.fa.fa-bell
     div.nanugi
-      div.dropdown_menu
-        ul#gnb
-          if user
-            img.user_img2(src="/images/noimage.png", alt="사진없음",width="100px", height="100px")
-            p #{user.m_username}
-          a(href="") 동물정보추가
-          h4 animals 
-          li 
-            a.notwhitespace(href="")
-              img.b_animal(src="/images/animal/설치류.png", alt="설치류")
-            | 설치류
-            ul.sub_menu.notwhitespace
-              li 
-                a(href="/mouse1")
-                  img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류1") 
-                | 기니피그
-              li 
-                a(href="/mouse2")
-                  img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류2")
-                | 친칠라
-              li
-                a(href="/mouse3") 
-                  img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류3") 
-                | 햄스터
-          li
-            a.notwhitespace(href="")
-              img.b_animal(src="/images/animal/어류.png", alt="설치류")
-            | 어류
-            ul.sub_menu.notwhitespace
-              li
-                a(href="/fish1") 
-                  img.b_animal.anima(src="/images/animal/어류.png", alt="어류1")
-                | 금붕어 
-              li
-                a(href="/fish2") 
-                  img.b_animal.anima(src="/images/animal/어류.png", alt="어류2")
-                | 구피
-              li
-                a(href="/fish3") 
-                  img.b_animal.anima(src="/images/animal/어류.png", alt="어류3")
-                | 네온테트라
-          li
-            a.notwhitespace(href="")
-              img.b_animal(src="/images/animal/조류.png", alt="조류")
-            | 조류
-            ul.sub_menu.notwhitespace
-              li 
-                a(href="/bird1") 
-                  img.b_animal.anima(src="/images/animal/조류.png", alt="어류1")
-                | 앵무새 
-              li 
-                a(href="/bird2") 
-                  img.b_animal.anima(src="/images/animal/조류.png", alt="어류2")
-                | 카나리아
-              li
-                a(href="/bird3") 
-                  img.b_animal.anima(src="/images/animal/조류.png", alt="어류3")
-                | 십자매
-          li
-            a.notwhitespace(href="")
-              img.b_animal(src="/images/animal/파충류.png", alt="파충류")
-            | 파충류
-            ul.sub_menu.notwhitespace
-              li
-                a(href="/snake1") 
-                  img.b_animal.anima(src="/images/animal/파충류.png", alt="파충류1")
-                | 뱀
-              li
-                a(href="/snake2") 
-                  img.b_animal.anima(src="/images/animal/파충류.png", alt="파충2")
-                | 거북이
-              li
-                a(href="/snake3") 
-                  img.b_animal.anima(src="/images/animal/파충류.png", alt="파충류3")
-                | 도마뱀
-          li
-            a.notwhitespace(href="") 
-              img.b_animal(src="/images/animal/포유류.png", alt="포유류")
-            | 포유류
-            ul.sub_menu.notwhitespace
-              li
-                a(href="/cat1") 
-                  img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류1")
-                | 강아지
-              li
-                a(href="/cat2") 
-                  img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류2")
-                | 고양이
-              li
-                a(href="/cat3") 
-                  img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류3")
-                | 라쿤
+      div.nanugi2
+        if user && user.m_image_name
+          div.layout_user_inform
+            a.a_username(href="/users/mypage")
+              img.user_img2(src=`/uploads/${user.m_image_name}` alt="유저가등록한사진",width="100px", height="100px")
+              div.p_box
+                p.p_username #{user.m_username} 님
+                p.p_username.p_username2 안녕하세요
+        if user && !user.m_image_name
+          div.layout_user_inform 
+            a.a_username(href="/users/mypage") 
+              img.user_img2(src="/images/noimage.png", alt="사진등록안함",width="100px", height="100px")
+              p.p_username #{user.m_username} 님
+              p.p_username.p_username2 안녕하세요
+        div.dropdown_menu
+          ul#gnb
+            //- if user.m_role === "ADMIN"
+            //-   a(href="") 동물정보추가
+            h4 animals 
+            li 
+              a.notwhitespace(href="")
+                img.b_animal(src="/images/animal/설치류.png", alt="설치류")
+              | 설치류
+              ul.sub_menu.notwhitespace
+                li 
+                  a(href="/mouse1")
+                    img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류1") 
+                  | 기니피그
+                li 
+                  a(href="/mouse2")
+                    img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류2")
+                  | 친칠라
+                li
+                  a(href="/mouse3") 
+                    img.b_animal.anima(src="/images/animal/설치류.png", alt="설치류3") 
+                  | 햄스터
+            li
+              a.notwhitespace(href="")
+                img.b_animal(src="/images/animal/어류.png", alt="설치류")
+              | 어류
+              ul.sub_menu.notwhitespace
+                li
+                  a(href="/fish1") 
+                    img.b_animal.anima(src="/images/animal/어류.png", alt="어류1")
+                  | 금붕어 
+                li
+                  a(href="/fish2") 
+                    img.b_animal.anima(src="/images/animal/어류.png", alt="어류2")
+                  | 구피
+                li
+                  a(href="/fish3") 
+                    img.b_animal.anima(src="/images/animal/어류.png", alt="어류3")
+                  | 네온테트라
+            li
+              a.notwhitespace(href="")
+                img.b_animal(src="/images/animal/조류.png", alt="조류")
+              | 조류
+              ul.sub_menu.notwhitespace
+                li 
+                  a(href="/bird1") 
+                    img.b_animal.anima(src="/images/animal/조류.png", alt="어류1")
+                  | 앵무새 
+                li 
+                  a(href="/bird2") 
+                    img.b_animal.anima(src="/images/animal/조류.png", alt="어류2")
+                  | 카나리아
+                li
+                  a(href="/bird3") 
+                    img.b_animal.anima(src="/images/animal/조류.png", alt="어류3")
+                  | 십자매
+            li
+              a.notwhitespace(href="")
+                img.b_animal(src="/images/animal/파충류.png", alt="파충류")
+              | 파충류
+              ul.sub_menu.notwhitespace
+                li
+                  a(href="/snake1") 
+                    img.b_animal.anima(src="/images/animal/파충류.png", alt="파충류1")
+                  | 뱀
+                li
+                  a(href="/snake2") 
+                    img.b_animal.anima(src="/images/animal/파충류.png", alt="파충2")
+                  | 거북이
+                li
+                  a(href="/snake3") 
+                    img.b_animal.anima(src="/images/animal/파충류.png", alt="파충류3")
+                  | 도마뱀
+            li
+              a.notwhitespace(href="") 
+                img.b_animal(src="/images/animal/포유류.png", alt="포유류")
+              | 포유류
+              ul.sub_menu.notwhitespace
+                li
+                  a(href="/cat1") 
+                    img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류1")
+                  | 강아지
+                li
+                  a(href="/cat2") 
+                    img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류2")
+                  | 고양이
+                li
+                  a(href="/cat3") 
+                    img.b_animal.anima(src="/images/animal/포유류.png", alt="포유류3")
+                  | 라쿤
       section.hwamyeon
         block content
     footer.notwhitespace.mf 

@@ -97,7 +97,7 @@ ul.MENU li:hover {
 
 /* @@@@@@@일반메뉴 CSS END@@@@@@@ */
 
-/* ********** 동물메뉴************ */
+/* ********** 동물목록************ */
 li {
   list-style: none;
 }
@@ -142,9 +142,6 @@ img.b_animal {
 div.dropdown_menu {
   position: left; /*이목록은 항상 왼쪽에두게..*/
   border: 3px solid black;
-  
-  border-radius: 15px;
-
   margin: 10px 10px 0 10px; /*섹션이랑 안붙게 위랑좀띄우고, 왼쪽도살짝*/
   padding-right: 10px; /* 설치류 글자랑 안붙게 좀밀고*/
   background-color: #fff8b4;
@@ -304,7 +301,11 @@ a.logout {
   text-decoration: none;
   font-weight: bold;
 }
-
+img.user_img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
 a.a_username {
   text-decoration: none;
   text-align: center;
@@ -313,11 +314,7 @@ p.p_username {
   /* background-color: white; */
   margin-left: 5px;
  color: black;
- font-weight: bold;
 
-}
-p.p_username2 {
-  margin-bottom: 5px;
 }
 /* a.mypage {
   color: #ffdf6a;
@@ -330,20 +327,7 @@ a.mypage .mypage-link {
 /* 회원사진 */
 img.user_img2 { 
   margin-left: 35px;
-  margin-top: 8px;
   border-radius: 50%;
   border: 5px solid pink;
 }
 
-div.layout_user_inform {
-  background-color: #fff8b4;
-  border: 3px solid black;
-  border-radius: 15px;
-  margin: 10px;
-}
-div.p_box {
-  background-color: white;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-top: 5px solid #ffdf6a;
-}

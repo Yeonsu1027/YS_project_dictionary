@@ -18,6 +18,8 @@ router.get("/", async (req, res) => {
   if (user) {
     // 나의 동물정보가져오고
     const myanimal = await MYANIMAL.findByPk(user);
+    // 좌측 유저사진 출력용 유저정보
+    
     // 아이디에 해당하는 모든 체크리스트 가져오게
     try {
       const rows = await CHECK.findAll({
@@ -25,7 +27,7 @@ router.get("/", async (req, res) => {
           u_user: user,
         },
       });
-      res.render("menu/home/home", { check: rows, myanimal }); //체크리스트 정보랑 동물정보 pug에보내고
+      res.render("menu/home/home", { check: rows, myanimal}); //체크리스트 정보랑 동물정보, 유저정보 pug에보내고
     } catch (error) {
       return res.json("에러.");
     }
@@ -87,7 +89,7 @@ router.get("/:u_num/delete", async (req, res) => {
 //--------------- 홈 리스트 체크표시추가
 
 router.get("/:u_num/check", async (req, res) => {
-  const u_num = req.params.u_num;
+  const u_num = req.params.u_num; //주소에서 리스트번호 가져오고
   const row = await CHECK.findByPk(u_num);
 
   if (row.u_checkmark === null) {
@@ -177,9 +179,14 @@ router.post("/update", upLoad.single("ma_image"), async (req, res) => {
 // router.get("/notice", async (req, res) => {
 //   res.render("menu/notice");
 // });
-router.get("/login", async (req, res) => {
-  res.render("menu/login");
-});
+
+
+// router.get("/login", async (req, res) => {
+//   res.render("menu/login");
+// });
+
+
+
 // 임시적용
 // const LOGIN_MESSAGE = {
 //   USER_NOT: "사용자 ID 없음",
@@ -222,7 +229,7 @@ try {
 
 // // -------------------
 
-// 경우씨 코드 -- 회원가입 미완성으로 작동 확인불가능
+// 로그인
 router.get("/login", async (req, res) => {
   const message = req.query.fail;
   res.render("menu/login", { NEED: message });

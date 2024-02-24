@@ -25,6 +25,14 @@ export default class tbl_members extends Model {
           type: DataTypes.STRING(5),
           allowNull: true,
         },
+        m_image_name: {
+          type: DataTypes.STRING(255),
+          allowNull: true,
+        },
+        m_image_origin_name: {
+          type: DataTypes.STRING(255),
+          allowNull: true,
+        },
       },
       {
         sequelize,

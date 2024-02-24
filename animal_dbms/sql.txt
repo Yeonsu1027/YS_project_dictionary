@@ -1,0 +1,102 @@
+CREATE DATABASE animalDB;
+
+USE animalDB;
+
+-- 동물정보 tbl
+CREATE TABLE tbl_animal (a_name	VARCHAR(20)		PRIMARY KEY,
+a_condition	VARCHAR(300)	NOT NULL,	
+a_food	VARCHAR(300)	NOT NULL,	
+a_habit	VARCHAR(300)	NOT NULL,	
+a_caution	VARCHAR(300)	NOT NULL	
+);
+-- ---------------------------------
+-- 동물테이블 import 확인용
+SELECT * FROM tbl_animal;
+-- --------------------------------------------------
+
+-- 회원정보 tbl
+CREATE TABLE tbl_members (
+
+m_username	VARCHAR(15)	PRIMARY KEY,
+m_password	VARCHAR(125)	NOT NULL,	
+m_realname	VARCHAR(20),		
+m_tel	VARCHAR(15),		
+m_role	VARCHAR(5)
+
+);
+
+SELECT * FROM tbl_members;
+
+
+-- 홈체크리스트 tbl
+CREATE TABLE tbl_check (
+u_num	INT		PRIMARY KEY,
+u_user	VARCHAR(15)	NOT NULL,	
+u_check	VARCHAR(100)	NOT NULL,
+u_checkmark INT
+);
+
+SELECT * FROM tbl_check;
+
+DROP TABLE tbl_check;
+
+-- 나의 반려동물 tbl
+CREATE TABLE tbl_myanimal (
+ma_user VARCHAR(15)	PRIMARY KEY,
+ma_animalname VARCHAR(30),
+ma_age VARCHAR(10),
+ma_image_name VARCHAR(255),
+ma_image_origin_name VARCHAR(255),
+ma_memo VARCHAR(300)
+);
+
+SELECT * FROM tbl_myanimal;
+
+DROP TABLE tbl_myanimal;
+
+-- 나의 반려동물 정보 미적용시 화면 테스트용
+INSERT INTO tbl_myanimal (ma_user)
+VALUES('yeonsu');
+
+-- ------------------------- 테스트용 두번째 아이디
+INSERT INTO tbl_members (m_username,m_password)
+VALUES ('yeonsu','12341234');
+-- ---------------------------
+
+-- ---------------
+-- 공지사항 tbl
+CREATE TABLE tbl_notice (
+n_num	VARCHAR(100),		
+n_contents	VARCHAR(200),		
+n_director	VARCHAR(20)		PRIMARY KEY
+		
+);
+
+-- 자유게시판 tbl
+CREATE TABLE tbl_bbd (
+    num  BIGINT PRIMARY KEY,
+	author VARCHAR(15) NOT NULL ,
+    title VARCHAR(150) NOT NULL,
+    content TEXT NOT NULL,
+	image_name VARCHAR(255),
+    image_origin_name VARCHAR(255),
+    date	VARCHAR(10)	NOT NULL
+);
+
+DROP TABLE tbl_bbd;
+-- 테스트용 기본내용
+INSERT INTO tbl_members (m_username,m_password)
+VALUES ('callor','12341234');
+INSERT INTO tbl_check (u_num,u_user, u_check)
+VALUES('1','callor','털정리');
+INSERT INTO tbl_bbd(num, author, password, title, content )
+VALUES ('1','callor', '1234', '게시글 제목','게시글 내용');
+
+
+
+
+
+
+SELECT * FROM tbl_members;
+SELECT * FROM tbl_check;
+

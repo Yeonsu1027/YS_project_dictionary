@@ -1,0 +1,21 @@
+extends ../../layout
+
+block content
+    link(rel='stylesheet', href='/css/myanimal.css')
+    script(src="/js/mypet_imgadd.js")
+    script(src="/js/imgadd.js")
+    div.box
+        h1.addanimal 나의 정보 수정하기
+            i.fa.fa-user-circle
+    form(method="POST",enctype="multipart/form-data") 
+        div.myanimalinput 
+            input(type="text", name="m_realname", placeholder="이름", value= row && row.m_realname ? row.m_realname : "")
+            input(type="text", name="m_tel", placeholder="전화번호", value= row && row.m_tel ? row.m_tel : "")
+            div.img_box
+                if row && row.m_image_name
+                    input.hidden(type="file",name="m_image",accept="image/*",id="ma_image")
+                    img.img_add.petimg(src=`/uploads/${row.m_image_name}`,width="150px",height="150px")
+                else
+                    input.hidden(type="file",name="m_image",accept="image/*",id="ma_image")
+                    img.img_add(src="/images/add_img.png" ,width="150px",height="150px",alt="사진추가이미지")
+            input.save(type="submit", value="저장")

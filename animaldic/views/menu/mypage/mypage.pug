@@ -1,4 +1,24 @@
 extends ../../layout
 
-block content 
-    h1 마이페이지
+block content
+    link(rel="stylesheet", href="/css/mypage.css")
+    div.mypage_div_box
+        h1.mypage_h1 MYPAGE
+            i.fa.fa-user-circle
+        div.mypage_div
+            if row.m_image_name
+                img.mypageimg(src=`/uploads/${row.m_image_name}`)
+            else
+                img.mypageimg(src="/images/noimage.png", alt="사진등록안함")
+            div.user_inform
+                p.userinformname 나의 ID
+                p= row.m_username
+            div.user_inform
+                p.userinformname 이름
+                p= row.m_realname
+            div.user_inform
+                p.userinformname 전화번호
+                p= row.m_tel
+            a.mypage_insert(href="/users/mypage_update") 수정하기
+            p 이제 수정버튼을 누르면 비밀번호 입력하는 페이지를 띄우고
+            p 입력하고 일치하면 회원정보를 실제 수정하는 페이지로 가게
