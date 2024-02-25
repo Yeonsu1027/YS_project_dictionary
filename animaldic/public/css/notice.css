@@ -1,112 +1,44 @@
-h2 {
-  font-weight: border;
-}
-.hr1 {
-  border: 0;
-  height: 2px;
-  background: #d3d3d3;
-}
-.grey {
-  color: #727272;
-}
-#strong {
-  font-weight: 900;
+h1.n_title {
+    text-align: center;
+    padding: 5px;
+    background-color: #ffdf6a;
 }
 
-table {
-  width: 100%;
-  border-top: 1px solid #00dad6;
-  border-collapse: collapse;
+ul.notice_menu {
+    display: flex;
+    background-color: #00dad6;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    li {
+        flex: 1;
+    }
+    
 }
-th {
-  background-color: #00dad6;
-  border-top: 3px solid #00dad6;
-}
-th,
-td {
-  border-bottom: 1px solid #d3d3d3;
-  padding: 10px;
-}
-
-.greylist {
-  width: 50px;
-  height: 30px;
-  font-weight: 900;
-  color: white;
-  text-align: center;
-  background: grey;
-  border: solid 2px white;
-  border-radius: 5px;
-}
-.gradient {
-  width: 80px;
-  height: 30px;
-  font-weight: 900;
-  color: rgb(0, 0, 0);
-  text-align: center;
-  background: #ffdf6a;
-  border: solid 2px rgba(0, 0, 0, 0);
-  border-radius: 5px;
+ul.notice_content {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    li {
+        flex: 1;
+    }
 }
 
-.left {
-  text-align: left;
-}
-.right {
-  float: right;
-  margin-right: 5px;
-}
-.center {
-  text-align: center;
-}
-
-a {
-  color: black;
-  text-decoration-line: none;
-}
-
-h2 {
-  background: #ffdf6a;
-}
-
-button.find {
-  width: 80px;
-  height: 30px;
-  font-weight: 900;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  background: #000000;
-  border: solid 2px rgba(0, 0, 0, 0);
-  border-radius: 5px;
-}
-ul.menumenu {
-  margin: 0 5px 10px 5px;
-  background-color: #ffdf6a;
-  display: flex;
-  padding: 10px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-
-ul.menumenu li {
-  flex: 1;
-  list-style: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: 0.7s;
-}
-
-ul.menumenu li:hover {
-  cursor: pointer;
-  color: white;
-}
-
-section.hwamyeon section {
-  border: 3px solid #00dad6;
-  margin: 0px 15px 15px 15px;
+a.insert_notice {
+    background-color: #ffdf6a;
+    border-radius: 10px;
+    width: 100px;
+    margin-left: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+    padding: 8px;
+    &:hover {
+      opacity: 0.7;
+    }
 }

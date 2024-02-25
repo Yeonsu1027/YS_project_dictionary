@@ -21,11 +21,16 @@ m_username	VARCHAR(15)	PRIMARY KEY,
 m_password	VARCHAR(125)	NOT NULL,	
 m_realname	VARCHAR(20),		
 m_tel	VARCHAR(15),		
-m_role	VARCHAR(5)
+m_role	VARCHAR(5),
+
+m_image_name VARCHAR(255),
+m_image_origin_name VARCHAR(255)
+
 
 );
 
 SELECT * FROM tbl_members;
+DROP TABLE tbl_members;
 
 
 -- 홈체크리스트 tbl
@@ -66,11 +71,21 @@ VALUES ('yeonsu','12341234');
 -- ---------------
 -- 공지사항 tbl
 CREATE TABLE tbl_notice (
-n_num	VARCHAR(100),		
-n_contents	VARCHAR(200),		
-n_director	VARCHAR(20)		PRIMARY KEY
+n_num	BIGINT AUTO_INCREMENT PRIMARY KEY,		
+n_author VARCHAR(15) NOT NULL ,
+n_title VARCHAR(150) NOT NULL,
+n_content TEXT NOT NULL,
+n_image_name VARCHAR(255),
+n_image_origin_name VARCHAR(255),
+n_date	VARCHAR(10)	NOT NULL	
 		
 );
+
+INSERT INTO tbl_notice (n_num,n_author,n_title,n_content,n_date)
+VALUES ('1','1','공지사항','공지사항내용','2024-02-26');
+
+
+DROP TABLE tbl_notice;
 
 -- 자유게시판 tbl
 CREATE TABLE tbl_bbd (
@@ -98,5 +113,8 @@ VALUES ('1','callor', '1234', '게시글 제목','게시글 내용');
 
 
 SELECT * FROM tbl_members;
+SELECT * FROM tbl_bbd;
 SELECT * FROM tbl_check;
+SELECT * FROM tbl_notice;
+
 

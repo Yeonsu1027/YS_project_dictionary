@@ -17,6 +17,10 @@ html(lang="ko")
       li
         a(href="/") HOME
           i.fa.fa-home
+      if user && user.m_role === 'ADMIN' 
+        li
+          a(href="/user_management") 회원정보 관리
+            i.fa.fa-users
       li
         a(href="/freeboard") 자유게시판
           i.fa.fa-comment
@@ -62,8 +66,8 @@ html(lang="ko")
               p.p_username.p_username2 안녕하세요
         div.dropdown_menu
           ul#gnb
-            //- if user.m_role === "ADMIN"
-            //-   a(href="") 동물정보추가
+            if user && user.m_role === 'ADMIN' 
+              a(href="") 동물정보 추가
             h4 animals 
             li 
               a.notwhitespace(href="")
