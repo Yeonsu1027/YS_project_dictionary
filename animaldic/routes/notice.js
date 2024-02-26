@@ -21,7 +21,7 @@ const manager = req.session.user ? req.session.user.m_role : undefined;
     res.render("menu/notice/insert")
   }
   else {
-    res.redirect("/"); // 로그인안했으면 못들어가게
+    res.redirect("/"); // 관리자 로그인시에만 접근가능
   }
 })
 

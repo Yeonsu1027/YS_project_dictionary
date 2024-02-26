@@ -122,6 +122,23 @@ router.post("/mypage_update",upLoad.single("m_image"), async (req,res)=>{
   });
 });
 
+//--------------------- 회원정보
+
+router.get("/user_management",async(req,res)=>{
+
+  const manager = req.session.user ? req.session.user.m_role : undefined;
+  if (manager === "ADMIN") {
+
+    const row = await USER.findAll();
+    res.render("menu/user_management", {row})
+    
+  }
+  else {
+    res.redirect("/"); // 관리자아님 못들어가게
+  }
+
+})
+
 
 
 

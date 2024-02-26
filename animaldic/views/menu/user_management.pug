@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/user_management.css")
+    h1.um_title 회원정보
+    ul.um_menu
+        li ID
+        li 이름
+        li 전화번호
+        li 권한
+    each user in row
+        ul.um_users
+            li= user.m_username
+            li= user.m_realname 
+            li= user.m_tel 
+            li= user.m_role
+    a.a_update_user(href="") 수정
+    h1 디테일만들고 거기서 수정하게 변경, 검색도넣어야함
