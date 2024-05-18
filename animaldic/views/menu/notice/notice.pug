@@ -2,18 +2,19 @@ extends ../../layout
 
 block content
   link(rel='stylesheet' href='./css/notice.css')
+  script(src="/js/notice.js")
   h1.n_title 공지사항
   ul.notice_menu
     li No.
     li 공지사항
     li 작성자
     li 작성일자
-  each notice in row
-    ul.notice_content
-      li=notice.n_num
-      li=notice.n_title
-      li=notice.n_author
-      li=notice.n_date
+  div.notice_box
+    each notice in row
+      ul.notice_content(data-n_num= `${notice.n_num}`)
+        li.n=notice.n_num
+        li.n=notice.n_title
+        li.n=notice.n_author
+        li.n=notice.n_date
   if user && user.m_role === 'ADMIN' 
-    a.insert_notice(href="/notice/insert") 공지사항 작성
-  h1 디테일만들고 수정하기 추가해야함
+    a.insert_notice(href="/notice/insert") 작성

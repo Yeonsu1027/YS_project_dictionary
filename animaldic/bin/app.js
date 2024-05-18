@@ -46,8 +46,8 @@ app.use(express.static(path.join("public")));
 
 app.use(
   session({
-    key: "callor", // 식별자, 브라우저에 저장될 cookie 이름
-    secret: "callor@callor.com", // SessionID 암호화용 키 아무말
+    key: "rito", // 식별자, 브라우저에 저장될 cookie 이름
+    secret: "rito1205@naver.com", // SessionID 암호화용 키 아무말
     cookie: {
       httpOnly: true,
       maxAge: 1000 * 60 * 60, // 1분, 1시간 //유효시간        지나면자동삭제

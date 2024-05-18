@@ -9,19 +9,7 @@ router.get("/", async (req, res, next) => {
   res.send("respond with a resource");
 });
 
-//----------------------- 로그인
-// router.get("/join", async (req, res) => {
-//   res.render("join");
-// });
-router.get("/find", async (req, res) => {
-  res.render("menu/find");
-});
-router.get("/find_id", async (req, res) => {
-  res.render("menu/find_id");
-});
-router.get("/find_pw", async (req, res) => {
-  res.render("menu/find_pw");
-});
+
 //----------------------------------- 회원가입
 
 

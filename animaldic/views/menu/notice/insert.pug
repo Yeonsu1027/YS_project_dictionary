@@ -4,12 +4,16 @@ block content
     link(rel='stylesheet', href='/css/myanimal.css')
     script(src="/js/imgadd.js")
     div.box
-        h1.addanimal 공지사항 작성
-            i.fa.fa-bookmark
+        if n_num
+            h1.addanimal 공지사항 수정
+                i.fa.fa-bookmark
+        else
+            h1.addanimal 공지사항 작성
+                i.fa.fa-bookmark
     form(method="POST",enctype="multipart/form-data") 
         div.myanimalinput 
-            input(type="text", name="n_title", placeholder="제목")
-            input.int(type="text", name="n_content", placeholder="내용")
+            input(type="text", name="n_title", placeholder="제목" value= notice && notice.n_title ? notice.n_title : "")
+            input.int(type="text", name="n_content", placeholder="내용" value= notice && notice.n_content ? notice.n_content : "")
             div.img_box
                 if notice && notice.n_image_name
                     input.hidden(type="file",name="n_image",accept="image/*",id="ma_image")

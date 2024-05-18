@@ -1,20 +1,19 @@
-extends  ../layout
+extends ../layout
 
-block  content 
-    link(rel="stylesheet", href="./css/login.css")
-    script(src="./js/login.js")
-    div.img
-        form.login(method="POST")
-            if NEED 
-                div.error= NEED 
-            div 
-                input.login.userid(type="text",placeholder="USER ID",name="m_username")
-            div
-                input.login.password(type="password",placeholder="PASSWORD",name="m_password")
-            div
-                input.login.btn_login(type="button",value="로그인")
-            div.join 
-                span 
-                    a(href="/users/find") 아이디비밀번호 찾기
-                span 
-                    a(href="/users/join") 회원가입
+block content 
+  link(rel="stylesheet", href="./css/login.css")
+  script(src="./js/login.js")
+  div.login_div_box
+    h1.login_h1 로그인
+    form.login(method="POST")
+      if NEED 
+        div.error= NEED 
+      div.form-group
+        input.login.userid(type="text", placeholder="USER ID", name="m_username")
+      div.form-group
+        input.login.password(type="password", placeholder="PASSWORD", name="m_password")
+      div.form-group.btn
+        input.login.btn_login(type="button", value="로그인")
+      div.form-group.join
+        span
+          a(href="/users/join") 회원가입
