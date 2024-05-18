@@ -48,7 +48,13 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/insert", (req, res) => {
-  return res.render("menu/freeboard/insert");
+  const user = req.session.user ? req.session.user : undefined;
+  if (user) {
+    return res.render("menu/freeboard/insert");
+  } else {
+    res.redirect("/login"); // 로그인안했으면 로그인화면으로 보내기
+  }
+
 });
 
 router.post("/insert", upLoad.single("image"), async (req, res) => {
@@ -127,6 +133,7 @@ req.body.num = num;
 // }
 
 router.get("/:num/detail", async (req, res) => {
+  
   const num = req.params.num;
   try {
     const row = await BBD.findByPk(num);
@@ -219,56 +226,14 @@ router.post("/:num/update", upLoad.single("image"), async (req, res) => {
   }
 });
 
-router.post("/:num/detail", async (req, res) => {
-  const user = req.session.user ? req.session.user.m_username : undefined;
+// 삭제
 
-  const username = req.body.author; // 클라이언트가 제공한 사용자명
-  const password = req.body.password; // 클라이언트가 제공한 비밀번호
-  const num = req.params.num; // 게시물 번호
-
-
-  if(!user){
-
-    const hashAlgorithm = crypto.createHash("sha512");
-    const hashing = hashAlgorithm.update(password);
-    const hashPassword = hashing.digest("base64");
-
-    // 사용자명을 이용하여 데이터베이스에서 사용자 정보를 조회합니다.
-    const result = await USER.findByPk(username);
-  
-    // 사용자가 존재하고, 비밀번호가 일치하는 경우에만 게시물을 삭제합니다.
-    if (result && result.m_password === hashPassword) {
-      req.session.user = { m_username: username }; // 세션에 사용자 정보 저장
-      try {
-        // 게시물을 삭제합니다.
-        await BBD.destroy({ where: { num } });
-  
-        // 삭제가 성공하면 홈 화면으로 리다이렉트합니다.
-        res.redirect("/freeboard");
-      } catch (error) {
-        // 삭제 중 오류가 발생한 경우 오류를 클라이언트로 전송합니다.
-        res.status(500).send("게시물을 삭제하는 중 오류가 발생했습니다.");
-      }
-    } else {
-      // 사용자가 존재하지 않거나 비밀번호가 일치하지 않는 경우 오류를 클라이언트로 전송합니다.
-      res.status(401).send("사용자 인증에 실패하였습니다.");
-    }
-
-  }
-
-
-
-  try {
-    // 게시물을 삭제합니다.
-    await BBD.destroy({ where: { num } });
-
-    // 삭제가 성공하면 홈 화면으로 리다이렉트합니다.
-    res.redirect("/freeboard");
-  } catch (error) {
-
-  }
+router.get("/:num/delete", async (req,res)=>{
+  const num = req.params.num;
+  await BBD.destroy({ where: { num } });
+  return res.redirect("/freeboard");
 });
 
-////////////////////////////////////////////////
+
 
 export default router;

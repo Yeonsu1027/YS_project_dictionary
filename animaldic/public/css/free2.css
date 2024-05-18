@@ -87,7 +87,8 @@ main {
   border-radius: 20%;
 }
 .write .btn:hover {
-  color: #ffdf6a;
+  cursor: pointer;
+ opacity: 0.7;
 }
 .write p {
   text-align: center;

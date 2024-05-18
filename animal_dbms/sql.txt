@@ -98,6 +98,8 @@ CREATE TABLE tbl_bbd (
     date	VARCHAR(10)	NOT NULL
 );
 
+
+
 DROP TABLE tbl_bbd;
 -- 테스트용 기본내용
 INSERT INTO tbl_members (m_username,m_password)
@@ -109,12 +111,13 @@ VALUES ('1','callor', '1234', '게시글 제목','게시글 내용');
 
 
 
-
-
-
 SELECT * FROM tbl_members;
 SELECT * FROM tbl_bbd;
 SELECT * FROM tbl_check;
 SELECT * FROM tbl_notice;
 
 
+
+
+
+SHOW INDEX FROM tbl_bbd;

@@ -1,13 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const TH_ITEMS = {
-    No: "num",
-    제목: "title",
-    글쓴이: "author",
-  };
-
-  // href : 현재 화면이 열릴때 서버에 요청한 주소창의 값들
-  // href 값의 일부를 추출하거나, 값을 가공하기 위하여 사용
-  const url = new URL(document.location.href);
 
   const pro_table = document.querySelector("table.list");
   /**

@@ -41,6 +41,7 @@ td {
   border-radius: 5px;
 }
 button.gradient {
+  margin-top: 3px;
   display: inline-block;
   margin-right: 0;
   width: 80px;
@@ -83,12 +84,14 @@ h2 {
 }
 
 button.find {
+  margin-top: 2px;
+  margin-bottom: 3px;
   width: 80px;
   height: 30px;
   font-weight: 900;
-  color: rgb(255, 255, 255);
+  color: black;
   text-align: center;
-  background: #000000;
+  background: #ffdf6a;
   border: solid 2px rgba(0, 0, 0, 0);
   border-radius: 5px;
 }
