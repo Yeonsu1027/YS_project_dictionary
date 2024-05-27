@@ -80,6 +80,14 @@ n_image_origin_name VARCHAR(255),
 n_date	VARCHAR(10)	NOT NULL	
 		
 );
+SET SQL_SAFE_UPDATES = 1;
+
+UPDATE tbl_notice
+SET n_date = '2024-02-29';
+
+UPDATE tbl_bbd
+SET date = '2024-02-29';
+
 
 INSERT INTO tbl_notice (n_num,n_author,n_title,n_content,n_date)
 VALUES ('1','1','공지사항','공지사항내용','2024-02-26');
